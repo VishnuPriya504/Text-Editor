@@ -30,7 +30,9 @@ export default function TextForm(props) {
     const newtext2='';
     setText(newtext2);
   }
-  
+  const handleCopy = () => {
+    navigator.clipboard.writeText(text);
+  }
 
 const speak = () => {
   let msg = new SpeechSynthesisUtterance();
@@ -62,11 +64,15 @@ const handleUndoClear=()=>{
           <button onClick={handleclick2} className="btn btn-primary mx-1">
           LowerCase
         </button>
-        <button onClick={handleclick3} className="btn btn-outline-danger mx-1">
-          Clear
-        </button>
+     
+       
+        <button type="submit" onClick={handleCopy} className="btn btn-primary mx-2 my-2">Copy To clipboard</button>
+        <button type="submit" onClick={handleUndoClear} className="btn btn-primary mx-2 my-2">Undo</button>
         <button type="submit" onClick={speak} className="btn btn-warning mx-2 my-2">Speak</button>
-        <button type="submit" onClick={handleUndoClear} className="btn btn-warning mx-2 my-2">Undo</button>
+
+        <button onClick={handleclick3} className="btn btn-outline-danger mx-1">
+        Clear
+      </button>
         
         
 
