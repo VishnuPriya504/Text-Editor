@@ -18,12 +18,7 @@ export const Navbar = (props) => {
           <li className="nav-item">
             <a className="nav-link active "href='/'>{props.Abouttext}</a>
           </li>
-          <li className="nav-item">
-            <a className="nav-link active" href='/'>Skills</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link active" href='/' aria-disabled="true">Contact</a>
-          </li>
+         
         </ul>
         <div className={`form-check form-switch text-${props.mode==='light'?'dark':'light' }`}>
         <input onClick={props.togglemode} className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"/>

@@ -48,9 +48,12 @@ const handleUndoClear=()=>{
   return (
     <>
       <div className="container">
-        <h1>{props.heading}</h1>
+        <h1  style={{color:props.mode==='dark'?'white':'#042743'}}>{props.heading}</h1>
         <div className="mb-3">
           <textarea
+          // one curly bracket for js and two for the object in the js
+            // style={{backgroundColor:props.mode==='dark'?'grey':'white', color:props.mode==='dark'?'black':'white'}}
+            // style={{backgroundColor:props.mode==='dark'?'grey':'white', color: props.mode==='dark'?'white':'#042743'}}
             value={text}
             onChange={handlechange}
             className="form-control "
@@ -78,13 +81,16 @@ const handleUndoClear=()=>{
 
 
           </div>
-      <div className="container my-3">
+      <div
+      // style={{color:props.mode==='dark'?'white':'black'}}
+
+      className="container my-3" style={{color:props.mode==='dark'?'white':'#042743'}}>
         <h1>Your text summary</h1>
         
         <p>{text.split(" ").length} words and {text.length} characters</p>
         <p> {0.008*text.split(" ").length}Time</p>
         <h2>Preview</h2>
-        <p>{text}</p>
+        <p>{text.length>0?text:"Enter Any Text to Preview"}</p>
         </div>
      
     </>
